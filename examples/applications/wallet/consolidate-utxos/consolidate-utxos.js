@@ -6,7 +6,7 @@
 const NETWORK = `testnet`
 
 // Instantiate bitbox.
-const bitboxLib = "../../../lib/BITBOX"
+const bitboxLib = "../../../dist/BITBOX"
 const BITBOX = require(bitboxLib).BITBOX
 
 // Instantiate SLP based on the network.

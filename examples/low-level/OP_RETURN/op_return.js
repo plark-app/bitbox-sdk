@@ -3,7 +3,7 @@
 */
 
 // Instantiate bitbox.
-const bitboxLib = "../../../lib/BITBOX"
+const bitboxLib = "../../../dist/BITBOX"
 const BITBOX = require(bitboxLib).BITBOX
 const bitbox = new BITBOX()
 
@@ -24,23 +24,23 @@ function parseOP_RETURN(txid) {
     tx => {
       // You may wish to log this tx info to the console to inspect and plan your parsing function
       // console.log(tx)
-      
+
       // Begin parsing transaction
 
       // Initialize an array to store any OP_Return messages
       let messages = []
 
       // Iterate over outputs looking for OP_Return outputs
-    
-      for (let i=0; i < tx.vout.length; i++) {        
-        
-        // If this is an OP_Return output        
+
+      for (let i=0; i < tx.vout.length; i++) {
+
+        // If this is an OP_Return output
         if (typeof tx.vout[i].scriptPubKey.addresses === 'undefined') {
-          
-          let message = ''          
+
+          let message = ''
           let fromAsm = ''
           let decoded = ''
-          
+
           //Pretty print your raw transaction data to the console
           //console.log(JSON.stringify(tx, null, 2))
 
@@ -48,11 +48,11 @@ function parseOP_RETURN(txid) {
             // Decode the OP_Return message
             message = tx.vout[i].scriptPubKey.asm
 
-            // If length is <= 20 characters, translate from hex            
+            // If length is <= 20 characters, translate from hex
             if (message.length <= 20) {
               message = tx.vout[i].scriptPubKey.hex
               message = message.substring(4)
-              message = "OP_RETURN " + message              
+              message = "OP_RETURN " + message
             }
 
             fromAsm = bitbox.Script.fromASM(message)
@@ -65,10 +65,10 @@ function parseOP_RETURN(txid) {
           catch(err) {
             console.log(`Error in parsing OP_RETURN:`)
             console.log(err)
-          }          
+          }
         }
       }
-      
+
       if (messages.length === 1) {
         console.log(`Message found!`)
         console.log(``)
@@ -86,7 +86,7 @@ function parseOP_RETURN(txid) {
       console.log('Error in bitbox.Transaction.details(${txid}):')
       console.log(err)
     }
-  ) 
+  )
 }
 
 parseOP_RETURN(txid)

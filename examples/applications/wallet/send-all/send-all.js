@@ -9,7 +9,7 @@ const NETWORK = `testnet`
 const RECV_ADDR = `bchtest:qqmd9unmhkpx4pkmr6fkrr8rm6y77vckjvqe8aey35`
 
 // Instantiate bitbox.
-const bitboxLib = "../../../lib/BITBOX"
+const bitboxLib = "../../../dist/BITBOX"
 const BITBOX = require(bitboxLib).BITBOX
 
 // Instantiate SLP based on the network.

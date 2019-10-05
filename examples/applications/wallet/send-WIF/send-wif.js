@@ -11,7 +11,7 @@ let RECV_ADDR = ``
 const SATOSHIS_TO_SEND = 1000
 
 // Instantiate bitbox.
-const bitboxLib = "../../../lib/BITBOX"
+const bitboxLib = "../../../dist/BITBOX"
 const BITBOX = require(bitboxLib).BITBOX
 
 // Instantiate SLP based on the network.

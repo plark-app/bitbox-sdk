@@ -4,7 +4,7 @@
 */
 
 // Instantiate bitbox.
-const bitboxLib = "../../../lib/BITBOX"
+const bitboxLib = "../../../dist/BITBOX"
 const BITBOX = require(bitboxLib).BITBOX
 const bitbox = new BITBOX({ restURL: "https://trest.bitcoin.com/v2/" })
 

@@ -6,8 +6,9 @@
     "downlevelIteration": true,
     "moduleResolution": "node",
     "lib": ["es2017"],
-    "sourceMap": true
+    "sourceMap": true,
+    "outDir": "dist/",
+    "declaration": true
   },
-  "include": ["./lib", "./test", "./test/unit/**/*.ts"],
-  "files": ["index.ts"]
+  "include": ["src"]
 }
