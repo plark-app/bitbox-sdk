@@ -28,7 +28,7 @@ describe("#rate-limits", () => {
     try {
       const promises = []
       for (let i = 0; i < 300; i++) {
-        const promise = bitbox.Control.getInfo()
+        const promise = bitbox.Control.getNetworkInfo()
         promises.push(promise)
       }
 
@@ -37,6 +37,8 @@ describe("#rate-limits", () => {
       // console.log(`temp: ${util.inspect(temp)}`)
       assert.equal(true, false, "Unexpected result!")
     } catch (err) {
+      // console.log(`err: `, err)
+
       // Expected error response
       if (err.error) {
         assert.hasAnyKeys(err, ["error"])
