@@ -15,8 +15,10 @@ let bitbox = new BITBOX()
 
 if (process.env.SERVER === "local")
   bitbox = new BITBOX({ restURL: "http://localhost:3000/v2/" })
-if (process.env.SERVER === "stage")
+else if (process.env.SERVER === "stage")
   bitbox = new BITBOX({ restURL: "https://rest.btctest.net/v2/" })
+else if (process.env.SERVER)
+  bitbox = new BITBOX({ restURL: process.env.SERVER })
 
 // Inspect utility used for debugging.
 const util = require("util")
@@ -277,7 +279,7 @@ describe(`#address`, () => {
       const addr = "bitcoincash:qz7teqlcltdhqjn2an8nspu7g2x6g3d3rcq8nk4nzs"
 
       const result = await bitbox.Address.transactions(addr)
-      //console.log(`result: ${JSON.stringify(result, null, 2)}`)
+      console.log(`result: ${JSON.stringify(result, null, 2)}`)
 
       assert.hasAllKeys(result, [
         "txs",
