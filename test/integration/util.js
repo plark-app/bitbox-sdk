@@ -71,7 +71,7 @@ describe(`#util`, () => {
       //console.log(`result: ${JSON.stringify(result, null, 2)}`)
 
       assert.isArray(result)
-      assert.hasAllKeys(result[0], [
+      assert.hasAnyKeys(result[0], [
         "isvalid",
         "address",
         "scriptPubKey",

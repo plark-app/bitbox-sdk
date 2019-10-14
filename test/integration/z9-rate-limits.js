@@ -46,7 +46,7 @@ describe("#rate-limits", () => {
 
         // Handle other types of error response.
       } else {
-        console.log(`Unexpected error:`)
+        console.log(`Unexpected error: `, err.message)
         // console.log(`err: ${util.inspect(err)}`)
         assert.equal(true, false, "Unexpected error")
       }
