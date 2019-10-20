@@ -1,6 +1,6 @@
 {
   "name": "@plark/bitbox-sdk",
-  "version": "8.10.2",
+  "version": "8.10.3",
   "description": "Temporary library of BITBOX SDK for Bitcoin Cash to avoid problem with typescript",
   "author": "Gabriel Cardona <gabriel@bitcoin.com>",
   "contributors": [
