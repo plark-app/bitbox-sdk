@@ -36,7 +36,7 @@ export class TransactionBuilder {
   tx: any
   private _address: Address
 
-  constructor(network: string = "mainnet") {
+  constructor(network: string = "mainnet", maximumFeeRate: number = 25000) {
     let bitcoincash: BchInfo
     if (network === "mainnet") {
       this._address = new Address()
@@ -48,7 +48,7 @@ export class TransactionBuilder {
     else bitcoincash = coininfo.bitcoincash.test
 
     const bitcoincashBitcoinJSLib: any = bitcoincash.toBitcoinJS()
-    this.transaction = new Bitcoin.TransactionBuilder(bitcoincashBitcoinJSLib)
+    this.transaction = new Bitcoin.TransactionBuilder(bitcoincashBitcoinJSLib, maximumFeeRate)
     this.DEFAULT_SEQUENCE = 0xffffffff
     this.hashTypes = {
       SIGHASH_ALL: 0x01,
