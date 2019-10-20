@@ -1,5 +1,5 @@
 {
-  "name": "bitbox-sdk",
+  "name": "@plark/bitbox-sdk",
   "version": "8.10.1",
   "description": "BITBOX SDK for Bitcoin Cash",
   "author": "Gabriel Cardona <gabriel@bitcoin.com>",
